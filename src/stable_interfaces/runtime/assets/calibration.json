@@ -1,0 +1,87 @@
+{
+  "format": "gdn-ast-frozen-v1",
+  "config": {
+    "backend": "fla",
+    "stages": [
+      3
+    ],
+    "slots": 16,
+    "chi_threshold": 0.58,
+    "readability_threshold": 0.58,
+    "epsilon": 1e-06,
+    "ridge": 0.0001,
+    "lora_rank": 8,
+    "lora_alpha": 8.0,
+    "reader_rank": 16,
+    "reader_alpha": 16.0,
+    "readability_check": true
+  },
+  "gradient_updates": 0,
+  "tensor_sha256": "ef8fc229e4f087c5dc47e97e01c73acecbcd0027011881e828ce981dafff9614",
+  "protocol_sha256": "d0533c76d548073c2f8e9ae0154587f870879859a33f98bc8befd4f6d7c34099",
+  "model_config_sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+  "provenance": {
+    "method": "train_dev_spectral_queries",
+    "calibration_task_ids": [
+      [
+        "train",
+        "6104387_1"
+      ],
+      [
+        "dev",
+        "530b157_3"
+      ],
+      [
+        "train",
+        "60d0b5b_1"
+      ],
+      [
+        "train",
+        "287e338_1"
+      ],
+      [
+        "train",
+        "ccb4494_3"
+      ],
+      [
+        "train",
+        "3c13f5a_1"
+      ],
+      [
+        "train",
+        "aa8502b_3"
+      ],
+      [
+        "train",
+        "76f2c72_1"
+      ],
+      [
+        "train",
+        "692c77d_2"
+      ],
+      [
+        "train",
+        "7d7fbf6_3"
+      ],
+      [
+        "dev",
+        "4ec8de5_3"
+      ],
+      [
+        "dev",
+        "6bdbc26_2"
+      ]
+    ],
+    "record_count": 22,
+    "input_sha256": "41618d9ce5a3d76cd6e436a415c7fd33e9dd430e56c576fdbc6c3d4d5be3b54b",
+    "snapshots": {
+      "10": 349
+    },
+    "optimizer_updates": 0,
+    "test_used_for_calibration": false
+  },
+  "known_limitations": [
+    "calibration is not data-free",
+    "cached/full routing is not exactly equivalent"
+  ]
+}

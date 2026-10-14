@@ -1,0 +1,51 @@
+{
+  "stable_interfaces": {
+    "base": {
+      "catalog": {
+        "rules": [
+          {
+            "stage": 3,
+            "chi": 0.55,
+            "psi": 0.74,
+            "min_net": 1
+          }
+        ],
+        "protect_memory": true,
+        "mode": "cascade",
+        "reader": "projection",
+        "min_layer_savings": 256,
+        "merge_error": 0.55,
+        "members_per_slot": 2,
+        "preflight": true,
+        "one_stage_per_tool": true,
+        "min_tool_fraction": 0.05,
+        "signal": "reference",
+        "beta_floor": 1e-06
+      },
+      "data": {
+        "rules": [
+          {
+            "stage": 3,
+            "chi": 0.6,
+            "psi": 0.8,
+            "min_net": 1
+          }
+        ],
+        "protect_memory": true,
+        "mode": "cascade",
+        "reader": "projection",
+        "min_layer_savings": 256,
+        "merge_error": 0.5,
+        "members_per_slot": 2,
+        "preflight": true,
+        "one_stage_per_tool": true,
+        "min_tool_fraction": 0.05,
+        "signal": "reference",
+        "beta_floor": 1e-06
+      },
+      "policy": "contract_catalog_data_v1"
+    },
+    "native_signals": true,
+    "protect_catalog": true
+  }
+}
