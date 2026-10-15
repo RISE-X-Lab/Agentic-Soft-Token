@@ -1,11 +1,17 @@
 <div align="center">
 
-# Agentic Soft Token
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme-hero-dark.svg">
+  <img src="assets/readme-hero-light.svg" alt="Agentic Soft Token" width="860">
+</picture>
 
-**Training-free, in-model context compression for long-horizon LLM agents.**
+<p>
+  <strong>Compact context for long-horizon agents.</strong><br>
+  Carry absorbed context forward as soft tokens, while keeping exact values explicit.
+</p>
 
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
-[![Tests](https://github.com/Hxnng/Agentic-Soft-Token/actions/workflows/ci.yml/badge.svg)](https://github.com/Hxnng/Agentic-Soft-Token/actions/workflows/ci.yml)
+[![Tests](https://github.com/RISE-X-Lab/Agentic-Soft-Token/actions/workflows/ci.yml/badge.svg)](https://github.com/RISE-X-Lab/Agentic-Soft-Token/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
@@ -21,6 +27,21 @@
 - **Persistent savings.** Later layers process a shorter sequence and reuse their compact caches during decoding and subsequent agent steps.
 - **Reproducible AppWorld evaluation.** One frozen policy, a bundled zero-update calibration, 168 ordered task IDs, numerical reference results, and focused tests are included.
 
+## Results
+
+The manuscript reports the following Base–ASTC comparisons with a frozen Qwen3.5-9B acting model. Workload is relative to Base = 100%; lower is better.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/benchmark-results-dark.svg">
+    <img src="assets/benchmark-results-light.svg" alt="Base and ASTC task quality and inference workload across AppWorld, OfficeBench, and 8-Objective QA." width="980">
+  </picture>
+</p>
+
+**AppWorld is reproducible from this release:** Base succeeds on 54/168 tasks and ASTC on 56/168, with **18.45% fewer Decode KV interactions** and **19.30% fewer Attention Pairs**. `table --reference` recomputes these values from the bundled per-task CSV. These Test-Normal tasks were used during development; this is not a fresh blind test.
+
+Decode KV and Attention Pairs count attention geometry, not measured latency or total-model FLOPs. See [metric definitions](docs/METRICS.md).
+
 ## Quick start
 
 ### Inspect results without a GPU
@@ -28,7 +49,7 @@
 Python 3.11 or 3.12 is sufficient to print the bundled reference table; this command does not require third-party packages, model weights, or benchmark data.
 
 ```bash
-git clone https://github.com/Hxnng/Agentic-Soft-Token.git
+git clone https://github.com/RISE-X-Lab/Agentic-Soft-Token.git
 cd Agentic-Soft-Token
 PYTHONPATH=src python -m stable_interfaces table --reference
 ```
@@ -77,28 +98,11 @@ stable-interfaces table --run base=runs/base-check \
 
 For the full 168-task comparison, remove `--limit 1`, use fresh output directories, and omit `--allow-partial` from the table command. Use one server per active evaluator when running parallel workers. The [reproduction guide](docs/REPRODUCIBILITY.md) covers seeds, sharding, calibration provenance, and CUDA checks.
 
-## Results
-
-The manuscript reports the following Base–ASTC comparisons with a frozen Qwen3.5-9B acting model. Workload is relative to Base = 100%; lower is better.
-
-| Benchmark | Method | Accuracy / EM ↑ | F1 ↑ | Decode KV ↓ | Attention Pairs ↓ | Generated Tokens ↓ |
-|---|---|---:|---:|---:|---:|---:|
-| AppWorld | Base | 32.14% | — | 100.00% | 100.00% | 100.00% |
-| AppWorld | **ASTC** | **33.33%** | — | **81.55%** | **80.70%** | **94.83%** |
-| OfficeBench | Base | **48.42%** | — | 100.00% | 100.00% | 100.00% |
-| OfficeBench | ASTC | 47.37% | — | **54.52%** | **49.32%** | **69.23%** |
-| 8-Objective QA | Base | 28.28% | 37.34% | 100.00% | 100.00% | 100.00% |
-| 8-Objective QA | **ASTC** | **30.56%** | **38.46%** | **78.69%** | **98.51%** | **86.55%** |
-
-**AppWorld is reproducible from this release:** Base succeeds on 54/168 tasks and ASTC on 56/168, with **18.45% fewer Decode KV interactions** and **19.30% fewer Attention Pairs**. `table --reference` recomputes these values from the bundled per-task CSV. These Test-Normal tasks were used during development; this is not a fresh blind test.
-
-Decode KV and Attention Pairs count attention geometry, not measured latency or total-model FLOPs. See [metric definitions](docs/METRICS.md).
-
 ## Repository layout
 
 ```text
 Agentic-Soft-Token/
-├── assets/                         # Paper Figure 1
+├── assets/                         # Logo, result graphics, and paper Figure 1
 ├── docs/                           # Method, metrics, reproduction
 ├── src/stable_interfaces/
 │   ├── algorithm/                  # Selection, protection, bounded pooling

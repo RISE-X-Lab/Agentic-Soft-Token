@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Agentic Soft Token icon</title>
+  <desc id="desc">A soft mint square with pink and blue token layers and a small apricot inset.</desc>
+  <g stroke="#294D73" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M76 77C56 74 39 81 30 96C23 107 27 120 33 136L44 159C49 171 59 178 76 171L93 160L91 95Z" fill="#F5C3E2"/>
+  <path d="M61 84C51 79 50 67 54 56C58 45 81 36 98 31C112 26 124 29 130 41L140 68L89 91C76 95 67 94 61 84Z" fill="#C6E4FF"/>
+  <path d="M117 66C144 63 182 64 200 70C219 76 228 92 229 108C230 124 222 138 222 151C221 167 231 184 230 199C229 217 218 228 201 232C181 237 140 235 118 235C95 235 79 233 73 221C66 208 69 193 73 177C77 161 77 150 73 135C68 118 66 104 71 91C78 73 94 67 117 66Z" fill="#CDEAC5"/>
+</g>
+<path d="M158 94C178 94 195 102 195 118" fill="none" stroke="#FFF7E5" stroke-width="11" stroke-linecap="round"/>
+<rect x="176" y="180" width="31" height="31" rx="10" fill="#FFD1A9"/>
+</svg>
