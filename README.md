@@ -10,6 +10,12 @@
   Carry absorbed context forward as soft tokens, while keeping exact values explicit.
 </p>
 
+<p>
+  Official implementation of<br>
+  <a href="https://arxiv.org/abs/2610.41291"><strong>In-Model Context Compression with Agentic Soft Tokens for Long-Horizon LLM Agents</strong></a>
+</p>
+
+[![arXiv](https://img.shields.io/badge/arXiv-2610.41291-b31b1b.svg)](https://arxiv.org/abs/2610.41291)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Tests](https://github.com/RISE-X-Lab/Agentic-Soft-Token/actions/workflows/ci.yml/badge.svg)](https://github.com/RISE-X-Lab/Agentic-Soft-Token/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -116,6 +122,23 @@ Agentic-Soft-Token/
 
 
 Run outputs can contain task instructions, tool results, and credentials. Keep `runs/` private; it is excluded from Git and package distributions.
+
+## Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@misc{he2026inmodel,
+  title={In-Model Context Compression with Agentic Soft Tokens for Long-Horizon {LLM} Agents},
+  author={Xuning He and Kai Fan and Runyu Zhang and Binghuan Wang and
+          Yuxiang Zhang and Xue Jiang and Yihong Dong},
+  year={2026},
+  eprint={2610.41291},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2610.41291}
+}
+```
 
 ## License
 
